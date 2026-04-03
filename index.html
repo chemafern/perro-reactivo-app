@@ -1,75 +1,63 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Entrenamiento Perro Reactivo</title>
-<meta name="theme-color" content="#1f2937" />
-<link rel="manifest" href="manifest.json" />
-<link rel="stylesheet" href="styles.css" />
+<meta name="theme-color" content="#1f2937">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="app">
-<header class="topbar">
-  <div>
-    <h1>Entrenamiento perro reactivo</h1>
-    <div id="dayLabel" class="sub"></div>
-  </div>
-  <div class="nav">
-    <button id="prevDayBtn" class="ghost">◀</button>
-    <button id="nextDayBtn" class="ghost">▶</button>
-  </div>
-</header>
-
-<section class="card">
-  <div class="timer-row">
+  <header class="topbar">
     <div>
-      <div class="section-title">Temporizador</div>
-      <div id="timer" class="timer">10:00</div>
+      <h1>Entrenamiento perro reactivo</h1>
+      <div id="dayLabel" class="sub"></div>
     </div>
-    <div class="timer-actions">
-      <button id="startBtn">Start</button>
-      <button id="pauseBtn" class="ghost">Pause</button>
-      <button id="resetBtn" class="ghost">Reset</button>
+  </header>
+
+  <section class="card">
+    <div class="timer-row">
+      <div>
+        <div class="section-title">Temporizador</div>
+        <div id="timer" class="timer">10:00</div>
+      </div>
+      <div class="timer-actions">
+        <button id="startBtn" type="button">Start</button>
+        <button id="pauseBtn" class="ghost" type="button">Pause</button>
+        <button id="resetBtn" class="ghost" type="button">Reset</button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="card">
-  <div class="section-title">Qué hacer hoy</div>
-  <div id="goal" class="goal"></div>
-  <div class="step"><span class="minute">0–2 min</span><div id="warmup"></div></div>
-  <div class="step"><span class="minute">2–6 min</span><div id="main"></div></div>
-  <div class="step"><span class="minute">6–8 min</span><div id="easy"></div></div>
-  <div class="step"><span class="minute">8–10 min</span><div id="close"></div></div>
-  <div class="note-title">Si falla</div>
-  <div id="failure" class="note"></div>
-  <div class="note-title">Material</div>
-  <div id="materials" class="note"></div>
-</section>
+  <section class="card">
+    <button id="togglePlanBtn" class="section-toggle" type="button">
+      <span>Qué hacer hoy</span>
+      <span id="toggleArrow">▼</span>
+    </button>
+    <div id="planContent">
+      <div id="goal" class="goal"></div>
+      <div class="step"><span class="minute">0–2 min</span><div id="warmup"></div></div>
+      <div class="step"><span class="minute">2–6 min</span><div id="main"></div></div>
+      <div class="step"><span class="minute">6–8 min</span><div id="easy"></div></div>
+      <div class="step"><span class="minute">8–10 min</span><div id="close"></div></div>
+      <div class="note-title">Si falla</div>
+      <div id="failure" class="note"></div>
+      <div class="note-title">Material</div>
+      <div id="materials" class="note"></div>
+    </div>
+  </section>
 
-<section class="card">
-  <div class="section-title">Evaluación del día</div>
-  <div id="evalGrid"></div>
-  <div class="legend">
-    <span class="pill blue">Bien hecho</span>
-    <span class="pill green">Hecho</span>
-    <span class="pill yellow">Con dificultad</span>
-    <span class="pill red">Imposible</span>
-  </div>
-</section>
+  <section class="card">
+    <div class="section-title">Evaluación del día</div>
+    <div id="evalGrid"></div>
+  </section>
 
-<section class="card">
-  <div class="section-title">Recomendación para mañana</div>
-  <div id="recommendation" class="recommendation">Completa la evaluación para ver la recomendación.</div>
-  <div class="actions"><button id="saveDayBtn">Guardar evaluación de hoy</button></div>
-  <div class="small">Al guardar, la app ajusta automáticamente el siguiente día: avanzar, repetir o retroceder.</div>
-</section>
-
-<section class="card">
-  <div class="section-title">Historial reciente</div>
-  <div id="history"></div>
-</section>
+  <section class="card">
+    <div class="section-title">Recomendación para mañana</div>
+    <div id="recommendation" class="recommendation">Completa la evaluación para ver la recomendación.</div>
+  </section>
 </div>
 <script src="app.js"></script>
 </body>
